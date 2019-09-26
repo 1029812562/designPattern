@@ -20,13 +20,13 @@ public class Test {
         initAllFiles(file, allFile);
         String regex = "[\\s]*import[\\s]+(java\\.[a-zA-Z\\.]+)[\\s]*;";
         Pattern pattern = Pattern.compile(regex);
-        for (File fileResovle : allFile){
+        for (File fileResovle : allFile) {
             try {
                 BufferedReader bufferedReader = new BufferedReader(new FileReader(fileResovle));
                 String line;
-                while ((line = bufferedReader.readLine())!=null){
+                while ((line = bufferedReader.readLine()) != null) {
                     Matcher matcher = pattern.matcher(line);
-                    while (matcher.find()){
+                    while (matcher.find()) {
                         System.out.println(matcher.group(1));
                     }
                 }
@@ -40,14 +40,14 @@ public class Test {
 
     }
 
-    private static void initAllFiles(File file, List<File> files){
-        if (file.isDirectory()){
+    private static void initAllFiles(File file, List<File> files) {
+        if (file.isDirectory()) {
             java.io.File[] childFiles = file.listFiles();
-            for (int i = 0; i<childFiles.length; i++){
+            for (int i = 0; i < childFiles.length; i++) {
                 java.io.File childFile = childFiles[i];
                 initAllFiles(childFile, files);
             }
-        }else{
+        } else {
             files.add(file);
         }
     }
