@@ -1,5 +1,6 @@
 package com.learn.designpattern.decorate;
 
+import java.io.BufferedReader;
 /**
  *
  * @author zhengxc
