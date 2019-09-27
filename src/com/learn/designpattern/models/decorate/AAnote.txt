@@ -1,0 +1,8 @@
+装饰者设计模式
+
+Component，一般是接口或者抽象类，定义了最简单的方法，装饰器类和被装饰类都要实现该接口。 InputStream
+ConcreteComponent，被装饰类，实现了Component。 FileInputStream
+Decorator，装饰器类，通过该类为ConcreteComponent动态添加额外的方法，实现了Component接口，并且该对象中持有一个Component的成员变量。 FilterInputStream
+ConcreteDecoratorA，ConcreteDecoratorB，具体的装饰类，该类中的方法就是要为ConcreteComponent动态添加的方法 UpCaseInputStream
+
+
